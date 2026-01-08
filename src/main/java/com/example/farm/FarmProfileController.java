@@ -23,15 +23,20 @@ public class FarmProfileController {
     @FXML
     protected void onSaveProfileClick() {
         System.out.println("Saving Profile:");
+
         System.out.println("Farm Name: " + farmNameField.getText());
         System.out.println("City: " + cityField.getText());
+
         System.out.println("Country: " + countryField.getText());
     }
 
     @FXML
     protected void onBackToHomeClick(ActionEvent event) throws IOException {
+
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+
         javafx.scene.Parent root = fxmlLoader.load();
+
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.getScene().setRoot(root);
     }

@@ -5,15 +5,19 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.farm.HelloController">
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="com.example.farm.HelloController">
+
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
 
-    <Label text="Welcome to FarmWise" style="-fx-font-size: 24px;"/>
+    <Label style="-fx-font-size: 24px;" text="Welcome to FarmWise" />
     
-    <Button text="Dashboard" onAction="#onDashboardClick"/>
-    <Button text="Livestock" onAction="#onLivestockClick"/>
-    <Button text="Farm Profile" onAction="#onFarmProfileClick"/>
+    <Button onAction="#onVaccinationTrackerClick" text="Vaccination Tracker" />
+
+    <Button onAction="#onFarmFinanceClick" text="Farm Finance" />
+
+    <Button onAction="#onLivestockClick" text="Livestock" />
+
+    <Button onAction="#onFarmProfileClick" text="Farm Profile" />
 </VBox>
