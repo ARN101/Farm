@@ -10,7 +10,9 @@ module com.example.farm {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires java.sql;
 
     opens com.example.farm to javafx.fxml;
+
     exports com.example.farm;
 }
