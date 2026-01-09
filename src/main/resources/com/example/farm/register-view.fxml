@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.example.farm.RegisterController" spacing="15" alignment="CENTER" style="-fx-background-color: white;">
+    <padding>
+        <Insets bottom="40" left="40" right="40" top="40"/>
+    </padding>
+
+    <Label text="Create New Account" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+    <VBox spacing="8" maxWidth="300">
+        <Label text="Email"/>
+        <TextField fx:id="emailField" promptText="Enter your email"/>
+
+        <Label text="Password"/>
+        <PasswordField fx:id="passwordField" promptText="Create a password"/>
+
+        <Label text="Farm Name"/>
+        <TextField fx:id="farmNameField" promptText="Your Farm Name"/>
+
+        <Label text="City"/>
+        <TextField fx:id="cityField" promptText="City"/>
+
+        <Label text="Country"/>
+        <TextField fx:id="countryField" promptText="Country"/>
+        
+        <Label fx:id="errorLabel" text="" style="-fx-text-fill: red;"/>
+    </VBox>
+
+    <Button text="Sign Up" onAction="#onRegisterClick" defaultButton="true" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold; -fx-min-width: 300px; -fx-min-height: 40px;"/>
+    
+    <Button text="Back to Login" onAction="#onBackClick" style="-fx-background-color: transparent; -fx-text-fill: #7f8c8d;"/>
+
+</VBox>
