@@ -31,7 +31,10 @@
             </HBox>
         </VBox>
         <TextArea fx:id="notesArea" promptText="Notes" prefRowCount="3" prefWidth="200.0"/>
-        <Button text="Add Record" onAction="#onAddRecordClick" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold; -fx-min-height: 80;"/>
+        <VBox spacing="10">
+            <Button text="Add Record" onAction="#onAddRecordClick" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold; -fx-min-height: 40; -fx-min-width: 100;"/>
+            <Button text="Delete Record" onAction="#onDeleteRecordClick" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-min-height: 40; -fx-min-width: 100;"/>
+        </VBox>
     </HBox>
 
     <TableView fx:id="vaccinationTable" VBox.vgrow="ALWAYS">

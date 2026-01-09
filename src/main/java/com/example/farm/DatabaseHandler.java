@@ -249,6 +249,36 @@ public class DatabaseHandler {
         }
     }
 
+    public static void deleteVaccination(int id) {
+        String currentUser = SessionManager.getUserEmail();
+        // Determine if the vaccination belongs to an animal owned by the current user
+        String verifySql = "SELECT 1 FROM vaccinations v " +
+                "JOIN animals a ON v.animal_id = CAST(a.id AS TEXT) " +
+                "WHERE v.id = ? AND a.user_email = ?";
+        String deleteSql = "DELETE FROM vaccinations WHERE id = ?";
+
+        try (Connection conn = DriverManager.getConnection(DB_URL)) {
+            // Verify ownership
+            try (PreparedStatement checkStmt = conn.prepareStatement(verifySql)) {
+                checkStmt.setInt(1, id);
+                checkStmt.setString(2, currentUser);
+                ResultSet rs = checkStmt.executeQuery();
+                if (!rs.next()) {
+                    System.out.println("Attempted to delete vaccination not owned by user.");
+                    return;
+                }
+            }
+
+            // Delete
+            try (PreparedStatement deleteStmt = conn.prepareStatement(deleteSql)) {
+                deleteStmt.setInt(1, id);
+                deleteStmt.executeUpdate();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static List<String> getAllAnimalIds() {
         List<String> ids = new ArrayList<>();
         String currentUser = SessionManager.getUserEmail();

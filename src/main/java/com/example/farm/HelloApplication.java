@@ -13,7 +13,7 @@ public class HelloApplication extends Application {
         DatabaseHandler.createTables();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
-        stage.setTitle("FarmWise Manager");
+        stage.setTitle("FarmWise");
         stage.setScene(scene);
         stage.show();
     }

@@ -11,6 +11,8 @@ module com.example.farm {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires java.sql;
+    requires com.google.gson;
+    requires java.net.http;
 
     opens com.example.farm to javafx.fxml;
 

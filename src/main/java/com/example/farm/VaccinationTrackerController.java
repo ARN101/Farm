@@ -109,6 +109,18 @@ public class VaccinationTrackerController {
         notesArea.clear();
     }
 
+    @FXML
+    protected void onDeleteRecordClick() {
+        VaccinationRecord selected = vaccinationTable.getSelectionModel().getSelectedItem();
+        if (selected == null) {
+            System.out.println("No record selected");
+            return;
+        }
+
+        DatabaseHandler.deleteVaccination(selected.getId());
+        loadVaccinations();
+    }
+
     private String calculateStatus(LocalDate nextDueDate) {
         LocalDate today = LocalDate.now();
         if (nextDueDate.isBefore(today)) {
